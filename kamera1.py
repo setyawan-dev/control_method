@@ -19,7 +19,6 @@ class Vision:
         self.ending = rospy.Publisher('selesai', info, queue_size=10)
         self.posisi = rospy.Publisher("koordinat", koor, queue_size=10)
         self.kirim_kamera1 = rospy.Publisher('/kamera1/image_raw', Image, queue_size=10)
-        self.kamera_mask = rospy.Publisher('/kamera1/mask/image_raw', Image, queue_size=10)
         self.koor_kamera1 = rospy.Publisher('/koordinat/kamera1', koor, queue_size=10)
         
         self.terima = rospy.Subscriber('info', info, self.kon_kamera)
@@ -170,7 +169,6 @@ class Vision:
         try:
             self.posisi.publish(mov)
             self.kirim_kamera1.publish(self.bridge.cv2_to_imgmsg(self.frame, "bgr8"))
-            self.kamera_mask.publish(self.bridge.cv2_to_imgmsg(mask, "mono8"))
             self.koor_kamera1.publish(mov)
         except Exception as e:
             rospy.logerr('ERROR 1')
