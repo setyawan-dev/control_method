@@ -29,3 +29,9 @@ ROS Noetic :
 ```bash
 sudo apt install ros-noetic-usb-cam
 ```
+
+#### 4. **Build Workspace**
+```bash
+cd catkin_ws/src/
+catkin build control_method
+```
