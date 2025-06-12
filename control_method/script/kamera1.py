@@ -91,7 +91,7 @@ class Vision:
 
         cv2.line(self.frame, (160, 0), (160, 240), (255, 255, 255), 1)
         cv2.line(self.frame, (0, 120), (320, 120), (255, 255, 255), 1)
-        cv2.putText(self.frame, f'FPS: {fps:.2f}', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+        cv2.putText(self.frame, f'FPS: {fps:.2f}cd cst  sr  ', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
         cv2.imshow("Kamera Utama", self.frame)
         cv2.waitKey(3)
         try:
